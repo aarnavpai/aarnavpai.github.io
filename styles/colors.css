@@ -1,0 +1,34 @@
+:root, html.catppuccin-mocha {
+  /* catppuccin mocha */
+
+  --bg-col: #1e1e2e; /* base */
+  --bg-dark: #181825; /* mantle */
+  --bg-light: #45475a; /* surface 1 */
+  --text-col: #cdd6f4; /* text */
+  --text-dark: #9399b2; /* overlay 2 */
+
+  --primary: #a6e3a1; /* green */
+  --primary-accent: #f9e2af; /* yellow */
+  --secondary: #cba6f7; /* mauve */
+  --secondary-accent: #f38ba8; /* red */
+  --tertiary: #89dceb; /* sky */
+  --tertiary-accent: #b4befe; /* lavender */
+}
+
+html.catppuccin-latte {
+  /* catppuccin latte */
+
+  --bg-col: #eff1f5; /* base */
+  --bg-dark: #bcc0cc; /* surface 1 */
+  --bg-light: #e6e9ef; /* mantle */
+  --text-col: #4c4f69; /* text */
+  --text-dark: #7c7f93; /* overlay 2 */
+
+  --primary: #40a02b; /* green */
+  --accent: #df8e1d; /* yellow */
+  --secondary: #8839ef; /* mauve */
+  --secondary-accent: #d20f39; /* red */
+  --tertiary: #04a5e5; /* sky */
+  --tertiary-accent: #7287fd; /* lavender */
+}
+

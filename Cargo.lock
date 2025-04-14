@@ -85,10 +85,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "iss-a5"
+name = "iss-a3"
 version = "0.1.0"
 dependencies = [
+ "js-sys",
  "sycamore",
+ "web-sys",
 ]
 
 [[package]]

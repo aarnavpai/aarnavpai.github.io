@@ -3,6 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- these are trunk (rust build tool) specific links -->
+  <!-- https://trunkrs.dev/assets -->
+  <link rel="css" href="./styles/reset.css" data-trunk>
+  <link rel="css" href="./styles/colors.css" data-trunk>
+  <link rel="css" href="./styles/style.css" data-trunk>
+  <link rel="copy-file" href="./cv.pdf" data-trunk>
+
+  <script>
+    // load theme from localStorage
+    const theme = localStorage.getItem("theme") || "catppuccin-mocha";
+    document.documentElement.className = theme;
+  </script>
+
   <title>Aarnav Pai's homepage</title>
 </head>
 <body>
