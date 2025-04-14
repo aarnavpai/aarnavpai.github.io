@@ -151,5 +151,12 @@ ul.skills-list {
     border: 1px transparent solid;
     border-radius: 0.5rem;
   }
+
+  li a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
