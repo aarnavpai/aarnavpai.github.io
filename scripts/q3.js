@@ -15,7 +15,7 @@
       else if (/[a-zA-z]/i.test(char)) letters++;
       else spec++;
     }
-    const numWords = words.split().filter(x => x.trim()).length;
+    const numWords = words.replaceAll("\n", " ").split(' ').filter(x => x.trim()).length;
 
     const result = document.getElementById("result");
     const ul = document.createElement("ul");
