@@ -7,15 +7,15 @@
     const fd = new FormData(e.target);
     const words = fd.get("words").toString();
 
-    let nl = 0, spaces = 0, cons = 0, vow = 0, spec = 0;
+    let nl = 0, spaces = 0, letters= 0, spec = 0;
     for (let i = 0; i < words.length; i++) {
       const char = words[i];
       if (char === '\n') nl++;
       else if (char === ' ') spaces++;
-      else if (/[aeiou]/i.test(char)) vow++;
-      else if (/[a-z]/i.test(char)) cons++;
+      else if (/[a-zA-z]/i.test(char)) letters++;
       else spec++;
     }
+    const numWords = words.split().filter(x => x.trim()).length;
 
     const result = document.getElementById("result");
     const ul = document.createElement("ul");
@@ -23,12 +23,12 @@
     ul.className = "calc";
     {
       const li = document.createElement("li");
-      li.textContent = `Consonants: ${cons}`;
+      li.textContent = `Letters: ${letters}`;
       ul.appendChild(li);
     }
     {
       const li = document.createElement("li");
-      li.textContent = `Vowels: ${vow}`;
+      li.textContent = `Words: ${numWords}`;
       ul.appendChild(li);
     }
     {

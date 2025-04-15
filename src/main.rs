@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use js_sys::{JsString, wasm_bindgen::JsCast};
+use js_sys::wasm_bindgen::JsCast;
 use sycamore::prelude::*;
 use web_sys::{FormData, HtmlFormElement, SubmitEvent};
 
@@ -54,9 +54,8 @@ fn Words() -> View {
         articles.insert("an", 0);
 
         let words = fd.get("words").as_string().unwrap();
-        let (consonants, vowels, spaces, newlines, special) = {
-            let mut consonants = 0;
-            let mut vowels = 0;
+        let (letters, spaces, newlines, special) = {
+            let mut letters = 0;
             let mut spaces = 0;
             // assuming newline means \n
             let mut newlines = 0;
@@ -66,17 +65,18 @@ fn Words() -> View {
                 match char {
                     b'\n' => newlines += 1,
                     b' ' => spaces += 1,
-                    b'a' | b'e' | b'i' | b'o' | b'u' | b'A' | b'E' | b'I' | b'O' | b'U' => {
-                        vowels += 1
-                    }
-                    65..=90 | 97..=122 => consonants += 1,
+                    65..=90 | 97..=122 => letters += 1,
                     48..=57 => {}
                     _ => special += 1,
                 }
             }
 
-            (consonants, vowels, spaces, newlines, special)
+            (letters, spaces, newlines, special)
         };
+        let num_words = words
+            .split_whitespace()
+            .filter(|x| !x.trim().is_empty())
+            .count();
         words
             .to_lowercase()
             .split_whitespace()
@@ -114,12 +114,12 @@ fn Words() -> View {
         ul.set_class_name("calc");
         {
             let li = document.create_element("li").unwrap();
-            li.set_text_content(Some(&format!("Consonants: {consonants}")));
+            li.set_text_content(Some(&format!("Letters: {letters}")));
             ul.append_child(&li.into()).unwrap();
         }
         {
             let li = document.create_element("li").unwrap();
-            li.set_text_content(Some(&format!("Vowels: {vowels}")));
+            li.set_text_content(Some(&format!("Words: {num_words}")));
             ul.append_child(&li.into()).unwrap();
         }
         {
