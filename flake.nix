@@ -22,6 +22,7 @@
           rustc
           cargo
           rust-analyzer
+          openssl
           trunk
         ];
       };

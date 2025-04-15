@@ -6,16 +6,21 @@
 
   <!-- these are trunk (rust build tool) specific links -->
   <!-- https://trunkrs.dev/assets -->
+  <link rel="rust" data-bin="wasm" data-trunk>
   <link rel="css" href="./styles/reset.css" data-trunk>
   <link rel="css" href="./styles/colors.css" data-trunk>
   <link rel="css" href="./styles/style.css" data-trunk>
   <link rel="copy-file" href="./cv.pdf" data-trunk>
+  <link rel="copy-dir" href="./img" data-trunk>
+  <link rel="copy-dir" href="./data" data-trunk>
 
   <script>
     // load theme from localStorage
     const theme = localStorage.getItem("theme") || "catppuccin-mocha";
     document.documentElement.className = theme;
   </script>
+  <script src="./scripts/q2.js" data-trunk></script>
+  <script src="./scripts/q3.js" data-trunk></script>
 
   <title>Aarnav Pai's homepage</title>
 </head>

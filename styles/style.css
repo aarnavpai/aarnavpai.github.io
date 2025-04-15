@@ -40,6 +40,14 @@ body {
   font-family: 'Iosevka', monospace;
 }
 
+img.me {
+  width: 50%;
+  height: 100%;
+  @media (max-width: 560px) {
+    width: 100%;
+  }
+}
+
 main {
   margin: 8rem auto 0;
   padding: 1rem;
@@ -73,7 +81,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 0;
   @media (max-width: 560px) {
     font-size: 1.25rem;
   }
@@ -129,6 +137,8 @@ button.theme {
       transition: background-color 300ms ease, color 300ms ease;
       border: none;
       color: var(--text-col);
+      width: 100%;
+      text-align: left;
 
       &:hover {
         background-color: var(--tertiary-accent);
@@ -160,3 +170,68 @@ ul.skills-list {
   }
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 2fr 1fr;
+  gap: 1rem;
+  img {
+    width: 100%;
+    height: 100%;
+    grid-column-start: span 2;
+  }
+  img:nth-child(4), img:nth-child(5) {
+    grid-column-start: span 3;
+  }
+}
+
+.img-modal {
+  z-index: 50;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  div {
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: 100%;
+    }
+  }
+}
+
+textarea {
+  background-color: var(--bg-dark);
+  color: var(--text);
+  outline: none;
+  border: 1px var(--bg-light) solid;
+  resize: vertical;
+  width: calc(100% - 1rem);
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  &:focus {
+    border-color: var(--primary);
+  }
+}
+
+button[type="submit"] {
+  background-color: var(--tertiary-accent);
+  color: var(--bg-col);
+  outline: none;
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  font-family: "Iosevka", monospace;
+  font-weight: 700;
+  border: 1px transparent solid;
+  &:focus {
+    border-color: var(--primary);
+    border-width: 2px;
+  }
+}

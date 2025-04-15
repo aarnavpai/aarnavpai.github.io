@@ -2,8 +2,19 @@
 name = "iss-a3"
 version = "0.1.0"
 edition = "2024"
+default-run = "scripts"
+
+[[bin]]
+name = "wasm"
+path = "src/main.rs"
+
+[[bin]]
+name = "scripts"
+path = "scripts/main.rs"
 
 [dependencies]
 js-sys = "0.3.77"
+reqwest = { version = "0.12.15", features = ["blocking"] }
+scraper = "0.23.1"
 sycamore = "0.9.1"
-web-sys = { version = "0.3.77", features = ["Document", "Window", "Storage", "Element"] }
+web-sys = { version = "0.3.77", features = ["Document", "Window", "Storage", "Element", "HtmlTextAreaElement", "FormData", "HtmlFormElement"] }
