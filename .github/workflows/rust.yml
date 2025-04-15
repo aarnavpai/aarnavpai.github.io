@@ -16,7 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions-rust-lang/setup-rust-toolchain@v1
-      target: wasm32-unknown-unknown
+      with:
+        target: wasm32-unknown-unknown
     - name: Scrape pronouns and prepositions
       run: cargo run --release
     - name: Download trunk
