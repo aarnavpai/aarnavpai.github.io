@@ -19,7 +19,7 @@ jobs:
       with:
         target: wasm32-unknown-unknown
     - name: Scrape pronouns and prepositions
-      run: cargo run --release
+      run: cargo run --release -- scrape
     - name: Download trunk
       run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.21.13/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
     - name: Build website
